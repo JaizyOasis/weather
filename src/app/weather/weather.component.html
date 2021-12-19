@@ -1,0 +1,34 @@
+<form>
+  <div class="section">
+    <div class="subsection">
+      <label for="city">Ваш город</label>
+    </div>
+    <div class="subsection">
+      <input
+        type="text"
+        name="city"
+        id="city"
+        (change)="clearResult()"
+        [(ngModel)]="city"
+      />
+    </div>
+  </div>
+  <div class="section">
+    <button (click)="getWeather()" [disabled]="isLoading" class="submit-button">
+      Узнать погоду
+    </button>
+  </div>
+</form>
+<div *ngIf="isLoading">
+  <h1 class="loading-text">Получение данных...</h1>
+</div>
+<div *ngIf="isError">
+  <h1 class="loading-text">Произошла ошибка.</h1>
+</div>
+<div class="section" *ngIf="result">
+  <h3>Температура {{ result?.temp }}&#176;C</h3>
+  <h3>Ощущается как {{ result?.feelsLike }}&#176;C</h3>
+  <h3>Влажность {{ result?.humidity }}%</h3>
+  <h3>Давление {{ result?.pressure }} мм ртутного столба.</h3>
+  <h3>Скорость ветра {{ result?.windSpeed }} м/с.</h3>
+</div>

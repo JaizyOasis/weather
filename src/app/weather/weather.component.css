@@ -1,0 +1,27 @@
+.loading-text {
+  text-align: center;
+  margin: 10px;
+}
+
+.section {
+  margin: auto;
+  text-align: center;
+}
+
+.subsection {
+  margin: 4px;
+}
+
+.submit-button {
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 1px black solid;
+  font-weight: bold;
+  color: #a4a3a3;
+  background-color: rgb(71, 71, 184);
+}
+
+.submit-button:active,
+.submit-button:hover {
+  background-color: rgb(120, 120, 223);
+}
